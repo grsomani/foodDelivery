@@ -17,6 +17,7 @@
 		04BF8DE5262AAE2C00478CF7 /* FoodDeliveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8DE4262AAE2C00478CF7 /* FoodDeliveryUITests.swift */; };
 		04BF8DF7262AB51300478CF7 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8DF6262AB51300478CF7 /* RequestData.swift */; };
 		04BF8DFC262AB5CE00478CF7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8DFB262AB5CE00478CF7 /* NetworkManager.swift */; };
+		04BF8E05262AC07200478CF7 /* MenuList.json in Resources */ = {isa = PBXBuildFile; fileRef = 04BF8E04262AC07200478CF7 /* MenuList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		04BF8DE6262AAE2C00478CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04BF8DF6262AB51300478CF7 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		04BF8DFB262AB5CE00478CF7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		04BF8E04262AC07200478CF7 /* MenuList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MenuList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				04BF8DF5262AB4EA00478CF7 /* Network Layer */,
+				04BF8E03262AC05D00478CF7 /* Resources */,
 				04BF8DC2262AAE2A00478CF7 /* AppDelegate.swift */,
 				04BF8DC4262AAE2A00478CF7 /* SceneDelegate.swift */,
 				04BF8DC6262AAE2A00478CF7 /* ViewController.swift */,
 				04BF8DC8262AAE2A00478CF7 /* Main.storyboard */,
-				04BF8DCB262AAE2C00478CF7 /* Assets.xcassets */,
 				04BF8DCD262AAE2C00478CF7 /* LaunchScreen.storyboard */,
 				04BF8DD0262AAE2C00478CF7 /* Info.plist */,
 			);
@@ -140,6 +142,15 @@
 				04BF8DFB262AB5CE00478CF7 /* NetworkManager.swift */,
 			);
 			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		04BF8E03262AC05D00478CF7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04BF8E04262AC07200478CF7 /* MenuList.json */,
+				04BF8DCB262AAE2C00478CF7 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 			files = (
 				04BF8DCF262AAE2C00478CF7 /* LaunchScreen.storyboard in Resources */,
 				04BF8DCC262AAE2C00478CF7 /* Assets.xcassets in Resources */,
+				04BF8E05262AC07200478CF7 /* MenuList.json in Resources */,
 				04BF8DCA262AAE2A00478CF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
