@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04324F29262B1A2D00219291 /* MenuListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04324F28262B1A2D00219291 /* MenuListPresenter.swift */; };
+		04324F2E262B1B8200219291 /* MenuViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04324F2D262B1B8200219291 /* MenuViewEntity.swift */; };
+		04324F33262B1C2100219291 /* MenuListViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04324F32262B1C2100219291 /* MenuListViewInteractor.swift */; };
 		04BF8DC3262AAE2A00478CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8DC2262AAE2A00478CF7 /* AppDelegate.swift */; };
 		04BF8DC5262AAE2A00478CF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8DC4262AAE2A00478CF7 /* SceneDelegate.swift */; };
 		04BF8DC7262AAE2A00478CF7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8DC6262AAE2A00478CF7 /* HomeViewController.swift */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04324F28262B1A2D00219291 /* MenuListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListPresenter.swift; sourceTree = "<group>"; };
+		04324F2D262B1B8200219291 /* MenuViewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewEntity.swift; sourceTree = "<group>"; };
+		04324F32262B1C2100219291 /* MenuListViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListViewInteractor.swift; sourceTree = "<group>"; };
 		04BF8DBF262AAE2A00478CF7 /* FoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BF8DC2262AAE2A00478CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04BF8DC4262AAE2A00478CF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				04BF8E5D262AF8C700478CF7 /* MenuListViewController.swift */,
+				04324F28262B1A2D00219291 /* MenuListPresenter.swift */,
+				04324F2D262B1B8200219291 /* MenuViewEntity.swift */,
+				04324F32262B1C2100219291 /* MenuListViewInteractor.swift */,
 			);
 			path = MenuList;
 			sourceTree = "<group>";
@@ -327,12 +336,15 @@
 				04BF8DC3262AAE2A00478CF7 /* AppDelegate.swift in Sources */,
 				04BF8E4E262AE67B00478CF7 /* HomeViewEntity.swift in Sources */,
 				04BF8DFC262AB5CE00478CF7 /* NetworkManager.swift in Sources */,
+				04324F2E262B1B8200219291 /* MenuViewEntity.swift in Sources */,
 				04BF8E46262AE25000478CF7 /* CarouselCell.swift in Sources */,
 				04BF8E58262AEB8B00478CF7 /* HomeViewInteractor.swift in Sources */,
 				04BF8DC5262AAE2A00478CF7 /* SceneDelegate.swift in Sources */,
 				04BF8DF7262AB51300478CF7 /* RequestData.swift in Sources */,
 				04BF8E5E262AF8C700478CF7 /* MenuListViewController.swift in Sources */,
 				04BF8E63262AF91B00478CF7 /* HomeViewRouter.swift in Sources */,
+				04324F33262B1C2100219291 /* MenuListViewInteractor.swift in Sources */,
+				04324F29262B1A2D00219291 /* MenuListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
