@@ -23,6 +23,8 @@
 		04BF8E4E262AE67B00478CF7 /* HomeViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8E4D262AE67B00478CF7 /* HomeViewEntity.swift */; };
 		04BF8E53262AEB0000478CF7 /* HomeViewPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8E52262AEB0000478CF7 /* HomeViewPresentor.swift */; };
 		04BF8E58262AEB8B00478CF7 /* HomeViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8E57262AEB8B00478CF7 /* HomeViewInteractor.swift */; };
+		04BF8E5E262AF8C700478CF7 /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8E5D262AF8C700478CF7 /* MenuListViewController.swift */; };
+		04BF8E63262AF91B00478CF7 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF8E62262AF91B00478CF7 /* HomeViewRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		04BF8E4D262AE67B00478CF7 /* HomeViewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewEntity.swift; sourceTree = "<group>"; };
 		04BF8E52262AEB0000478CF7 /* HomeViewPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresentor.swift; sourceTree = "<group>"; };
 		04BF8E57262AEB8B00478CF7 /* HomeViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewInteractor.swift; sourceTree = "<group>"; };
+		04BF8E5D262AF8C700478CF7 /* MenuListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListViewController.swift; sourceTree = "<group>"; };
+		04BF8E62262AF91B00478CF7 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				04BF8E0C262AC38300478CF7 /* Home */,
+				04BF8E5C262AF88600478CF7 /* MenuList */,
 				04BF8DF5262AB4EA00478CF7 /* Network Layer */,
 				04BF8E03262AC05D00478CF7 /* Resources */,
 				04BF8DC2262AAE2A00478CF7 /* AppDelegate.swift */,
@@ -172,8 +177,17 @@
 				04BF8E57262AEB8B00478CF7 /* HomeViewInteractor.swift */,
 				04BF8E45262AE25000478CF7 /* CarouselCell.swift */,
 				04BF8E4D262AE67B00478CF7 /* HomeViewEntity.swift */,
+				04BF8E62262AF91B00478CF7 /* HomeViewRouter.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		04BF8E5C262AF88600478CF7 /* MenuList */ = {
+			isa = PBXGroup;
+			children = (
+				04BF8E5D262AF8C700478CF7 /* MenuListViewController.swift */,
+			);
+			path = MenuList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +331,8 @@
 				04BF8E58262AEB8B00478CF7 /* HomeViewInteractor.swift in Sources */,
 				04BF8DC5262AAE2A00478CF7 /* SceneDelegate.swift in Sources */,
 				04BF8DF7262AB51300478CF7 /* RequestData.swift in Sources */,
+				04BF8E5E262AF8C700478CF7 /* MenuListViewController.swift in Sources */,
+				04BF8E63262AF91B00478CF7 /* HomeViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,7 +509,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VBTP5Q9WE9;
 				INFOPLIST_FILE = FoodDelivery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,7 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sampleApp.FoodDelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -511,7 +529,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VBTP5Q9WE9;
 				INFOPLIST_FILE = FoodDelivery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,7 +539,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sampleApp.FoodDelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

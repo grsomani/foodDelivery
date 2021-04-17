@@ -7,6 +7,15 @@
 
 import UIKit
 
+extension UIView {
+   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+}
+
 protocol HomeViewDelegate: class {
     func setup(carouselData: [HomeViewCarouselData])
 }
@@ -15,6 +24,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet private weak var carousel: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
+    @IBOutlet private weak var containerMenuList: UIView!
+    @IBOutlet private weak var menuTopContraint: NSLayoutConstraint!
 
     private var carouselData = [HomeViewCarouselData]()
     private var presenter: HomeViewPresentor? = nil
@@ -23,7 +34,26 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.presenter = HomeViewPresentor(viewDelegate: self)
         self.presenter?.fetchCarouselData()
+        
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.fullScreenMenu))
+        swipeGestureRecognizer.direction = UISwipeGestureRecognizer.Direction.up
+        self.view.addGestureRecognizer(swipeGestureRecognizer)
     }
+    
+    @objc func fullScreenMenu() {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.menuTopContraint.priority = UILayoutPriority(rawValue: 250)
+            self.view.layoutIfNeeded()
+        }, completion: { finish in
+            self.containerMenuList.isUserInteractionEnabled = true
+        })
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        containerMenuList.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
+    }
+    
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {

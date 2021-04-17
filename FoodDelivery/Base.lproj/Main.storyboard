@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -58,21 +59,34 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="wQg-WF-bVV">
                                 <rect key="frame" x="145.5" y="499.5" width="123" height="28"/>
                             </pageControl>
+                            <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3m-IY-6F2">
+                                <rect key="frame" x="0.0" y="527.5" width="414" height="368.5"/>
+                                <connections>
+                                    <segue destination="lWT-uh-BlE" kind="embed" identifier="" id="q5H-QV-TgZ"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pz5-hz-dKP" firstAttribute="bottom" secondItem="wQg-WF-bVV" secondAttribute="bottom" constant="10" id="169-PO-BaV"/>
                             <constraint firstItem="pz5-hz-dKP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BjO-fj-3M1"/>
+                            <constraint firstItem="pz5-hz-dKP" firstAttribute="bottom" secondItem="L3m-IY-6F2" secondAttribute="top" constant="10" id="IQJ-tY-SC5"/>
+                            <constraint firstAttribute="bottom" secondItem="L3m-IY-6F2" secondAttribute="bottom" id="LgY-Wb-K86"/>
+                            <constraint firstItem="L3m-IY-6F2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NGk-Hn-Sbc"/>
                             <constraint firstItem="pz5-hz-dKP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="VL2-cj-ewK"/>
                             <constraint firstItem="pz5-hz-dKP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XKW-2h-fPv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L3m-IY-6F2" secondAttribute="trailing" id="YRu-ug-YPv"/>
                             <constraint firstItem="pz5-hz-dKP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Zkb-yu-btN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pz5-hz-dKP" secondAttribute="trailing" id="fax-7J-cDm"/>
                             <constraint firstItem="wQg-WF-bVV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oI2-wc-YtH"/>
+                            <constraint firstItem="L3m-IY-6F2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" priority="750" id="qrN-2d-nxq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="carousel" destination="pz5-hz-dKP" id="Dkm-Rf-vEQ"/>
+                        <outlet property="containerMenuList" destination="L3m-IY-6F2" id="Ze8-4T-w1U"/>
+                        <outlet property="menuTopContraint" destination="IQJ-tY-SC5" id="yeG-dh-YCm"/>
                         <outlet property="pageControl" destination="wQg-WF-bVV" id="bt6-Tk-Cg1"/>
                     </connections>
                 </viewController>
@@ -80,10 +94,55 @@
             </objects>
             <point key="canvasLocation" x="-197.10144927536234" y="49.553571428571423"/>
         </scene>
+        <!--Menu List View Controller-->
+        <scene sceneID="1UH-8Y-3hZ">
+            <objects>
+                <viewController storyboardIdentifier="menuListVC" id="lWT-uh-BlE" customClass="MenuListViewController" customModule="FoodDelivery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CwG-Ka-ZEt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dVD-iH-NI9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sampleCell" id="ouz-8d-Fha">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ouz-8d-Fha" id="vtm-Pj-Oxv">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lWT-uh-BlE" id="N9s-XZ-rON"/>
+                                    <outlet property="delegate" destination="lWT-uh-BlE" id="Fcu-pj-9F5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hbt-1K-dRY"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="dVD-iH-NI9" firstAttribute="bottom" secondItem="CwG-Ka-ZEt" secondAttribute="bottom" id="4kW-Ai-Tcz"/>
+                            <constraint firstItem="dVD-iH-NI9" firstAttribute="leading" secondItem="CwG-Ka-ZEt" secondAttribute="leading" id="6Oh-j8-5BY"/>
+                            <constraint firstItem="dVD-iH-NI9" firstAttribute="trailing" secondItem="CwG-Ka-ZEt" secondAttribute="trailing" id="B14-0H-jmz"/>
+                            <constraint firstItem="dVD-iH-NI9" firstAttribute="top" secondItem="CwG-Ka-ZEt" secondAttribute="top" id="FI2-lX-ujy"/>
+                        </constraints>
+                    </view>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brx-yO-sWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="693" y="50"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

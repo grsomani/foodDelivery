@@ -11,6 +11,7 @@ class HomeViewPresentor {
     
     let viewDelegate: HomeViewDelegate
     private let interator = HomeViewInteractor()
+    private let router = HomeViewRouter()
     
     init(viewDelegate: HomeViewDelegate) {
         self.viewDelegate = viewDelegate
