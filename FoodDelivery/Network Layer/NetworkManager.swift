@@ -16,7 +16,10 @@ public struct NetworkManager {
     public static let instance = NetworkManager()
     private init() {}
     
-    public func performOperation(request: RequestData, onSuccess: @escaping (Data) -> Void, onError: @escaping (Error) -> Void) {
+    public func performOperation<T: Decodable>(request: RequestData,
+                                               reponseType: T.Type,
+                                               onSuccess: @escaping (T) -> Void,
+                                               onError: @escaping (Error) -> Void) {
         guard let url = URL(string: request.path) else {
             onError(ConnectionError.invalidURL)
             return
@@ -44,7 +47,12 @@ public struct NetworkManager {
                 onError(ConnectionError.noData)
                 return
             }
-            onSuccess(_data)
+            let decoder = JSONDecoder()
+            guard let parsedData = try? decoder.decode(reponseType.self, from: _data) else {
+                onError(ConnectionError.noData)
+                return
+            }
+            onSuccess(parsedData)
         }.resume()
     }
 }
