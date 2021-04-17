@@ -11,11 +11,13 @@ class MenuListViewInteractor {
     
     func getCategoriesList(onSuccess: @escaping ([MenuCategory]) -> Void,
                            onError: @escaping (Error) -> Void) {
-        //Temp - Change this to use network layer
-        let categories = [MenuCategory(name: "Pizza", categoryId: 1),
-                          MenuCategory(name: "Sushi", categoryId: 2),
-                          MenuCategory(name: "Drinks", categoryId: 3)]
-        onSuccess(categories)
+        
+        NetworkManager.instance.performOperation(request: MenuCategoryRequest(),
+                                                 reponseType: [MenuCategory].self) { categories in
+            onSuccess(categories)
+        } onError: { _ in
+            //ToDO: Handle error
+        }
     }
     
     func getMenuList(for categoryId: Int,
