@@ -14,7 +14,8 @@ protocol HomeViewDelegate: class {
 class HomeViewController: UIViewController {
     
     @IBOutlet private weak var carousel: UICollectionView!
-    
+    @IBOutlet private weak var pageControl: UIPageControl!
+
     private var carouselData = [HomeViewCarouselData]()
     private var presenter: HomeViewPresentor? = nil
     
@@ -25,7 +26,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         self.carouselData.count
@@ -44,11 +45,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.pageControl.currentPage = indexPath.row
+    }
 }
 
 extension HomeViewController: HomeViewDelegate {
+    
     func setup(carouselData: [HomeViewCarouselData]) {
         self.carouselData = carouselData
+        self.pageControl.numberOfPages = carouselData.count
+        self.pageControl.hidesForSinglePage = true
         self.carousel.reloadData()
     }
 }
