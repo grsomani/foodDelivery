@@ -5,31 +5,36 @@
             "name":"Mageritta",
             "description":"made of this and that and what not",
             "quantity":"8inch",
-            "price":"240"
+            "price":"240",
+            "image": "pizza1"
         },
         {
             "name":"Italian",
             "description":"made of this and that and what not",
             "quantity":"8inch",
-            "price":"240"
+            "price":"200",
+            "image": "pizza1"
         },
         {
             "name":"Veg Pinapple",
             "description":"made of this and that and what not",
             "quantity":"8inch",
-            "price":"240"
+            "price":"180",
+            "image": "pizza2"
         },
         {
-            "name":"Chiken",
+            "name":"Chicken",
             "description":"made of this and that and what not",
             "quantity":"8inch",
-            "price":"240"
+            "price":"250",
+            "image": "pizza1"
         },
         {
             "name":"Cheese Burst",
             "description":"made of this and that and what not",
             "quantity":"8inch",
-            "price":"240"
+            "price":"240",
+            "image": "pizza2"
         }
     ]
 }

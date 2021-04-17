@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeViewCarouselData {
+struct HomeViewCarouselData: Codable {
     let imageName: String
     let text: String
 }
