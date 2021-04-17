@@ -9,3 +9,6 @@ Write JSON contracts
 Write Network Layer
 Add Basic VIPER structure
 Create UI design
+
+#Images
+Images downloaded from www.freepik.com
