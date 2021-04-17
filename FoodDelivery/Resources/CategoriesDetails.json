@@ -1,53 +1,35 @@
-[
-  {
-      "category":"Pizza",
-      "Items":[
-         {
+{
+    "category":"Pizza",
+    "Items":[
+        {
             "name":"Mageritta",
             "description":"made of this and that and what not",
             "quantity":"8inch",
             "price":"240"
-         },
-         {
+        },
+        {
             "name":"Italian",
             "description":"made of this and that and what not",
             "quantity":"8inch",
             "price":"240"
-         }
-      ]
-   },
-   {
-      "category":"Sushi",
-      "Items":[
-         {
-            "name":"Salmon Roll",
+        },
+        {
+            "name":"Veg Pinapple",
             "description":"made of this and that and what not",
             "quantity":"8inch",
             "price":"240"
-         },
-         {
-            "name":"Unagi",
+        },
+        {
+            "name":"Chiken",
             "description":"made of this and that and what not",
             "quantity":"8inch",
             "price":"240"
-         }
-      ]
-   },
-   {
-      "category":"Drinks",
-      "Items":[
-         {
-            "name":"Long Island Tea",
+        },
+        {
+            "name":"Cheese Burst",
             "description":"made of this and that and what not",
-            "quantity":"30 ml",
+            "quantity":"8inch",
             "price":"240"
-         },
-         {
-            "name":"Mogito",
-            "description":"made of this and that and what not",
-            "quantity":"30 ml",
-            "price":"240"
-         }
-      ]
-   }
-]
+        }
+    ]
+}
