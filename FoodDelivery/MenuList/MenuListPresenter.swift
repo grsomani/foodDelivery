@@ -18,7 +18,9 @@ class MenuListPresenter {
     
     func fetchCategories() {
         self.interator.getCategoriesList { categories in
-            self.viewDelegate.updateCategories(with: categories)
+            DispatchQueue.main.async {
+                self.viewDelegate.updateCategories(with: categories)
+            }
         } onError: { Error in
             //ToDO: Handle Error
         }
@@ -26,7 +28,9 @@ class MenuListPresenter {
     
     func fetchMenu(for categoryId: Int) {
         self.interator.getMenuList(for: categoryId, onSuccess:{ categoryDetails in
-            self.viewDelegate.updateItemsList(with: categoryDetails)
+            DispatchQueue.main.async {
+                self.viewDelegate.updateItemsList(with: categoryDetails)
+            }
         }, onError: { error in
             //ToDO - handle error
         })

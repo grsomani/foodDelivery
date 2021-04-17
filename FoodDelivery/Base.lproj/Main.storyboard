@@ -98,23 +98,12 @@
         <scene sceneID="1UH-8Y-3hZ">
             <objects>
                 <viewController storyboardIdentifier="menuListVC" id="lWT-uh-BlE" customClass="MenuListViewController" customModule="FoodDelivery" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CwG-Ka-ZEt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CwG-Ka-ZEt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="368.5"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dVD-iH-NI9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sampleCell" id="ouz-8d-Fha">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ouz-8d-Fha" id="vtm-Pj-Oxv">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="lWT-uh-BlE" id="N9s-XZ-rON"/>
                                     <outlet property="delegate" destination="lWT-uh-BlE" id="Fcu-pj-9F5"/>
@@ -130,7 +119,6 @@
                             <constraint firstItem="dVD-iH-NI9" firstAttribute="top" secondItem="CwG-Ka-ZEt" secondAttribute="top" id="FI2-lX-ujy"/>
                         </constraints>
                     </view>
-                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="menuTable" destination="dVD-iH-NI9" id="6Yw-rG-haq"/>
                     </connections>

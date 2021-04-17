@@ -24,6 +24,7 @@ class MenuListViewController: UIViewController {
         super.viewDidLoad()
         self.presenter = MenuListPresenter(viewDelegate: self)
         self.presenter?.fetchCategories()
+        menuTable.register(UINib(nibName: "MenuListViewCell", bundle: nil), forCellReuseIdentifier: "menuListCell")
     }
 
 }
@@ -35,10 +36,13 @@ extension MenuListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "sampleCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "menuListCell") as? MenuListViewCell else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = "Special Cell \(indexPath.row)"
+        if let itemData = categoryDetail?.items[indexPath.row] {
+            cell.assign(data: itemData)
+        }
+        cell.selectionStyle = .none
         return cell
     }
 }
