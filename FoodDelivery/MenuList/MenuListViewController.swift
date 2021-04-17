@@ -14,10 +14,11 @@ protocol MenuListViewDelegate {
 
 class MenuListViewController: UIViewController {
     
+    @IBOutlet private weak var menuTable: UITableView!
     private var presenter: MenuListPresenter? = nil
     
     private var categoriesList: [MenuCategory]?
-    private var menuItems: [String]?
+    private var categoryDetail: CategoryDetails?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class MenuListViewController: UIViewController {
 extension MenuListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItems?.count ?? 0
+        return categoryDetail?.items.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,7 +47,7 @@ extension MenuListViewController: MenuListViewDelegate {
     
     func updateCategories(with categories: [MenuCategory]) {
         self.categoriesList = categories
-        //Reload TopView
+        //ToDO: Reload TopView
         
         //Fetch Items
         guard let firstCategory = self.categoriesList?.first else { return }
@@ -54,7 +55,8 @@ extension MenuListViewController: MenuListViewDelegate {
     }
     
     func updateItemsList(with categoryDetails: CategoryDetails) {
-        print(categoryDetails)
+        self.categoryDetail = categoryDetails
+        self.menuTable.reloadData()
     }
     
 }
