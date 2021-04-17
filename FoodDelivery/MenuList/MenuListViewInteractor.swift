@@ -15,14 +15,20 @@ class MenuListViewInteractor {
         NetworkManager.instance.performOperation(request: MenuCategoryRequest(),
                                                  reponseType: [MenuCategory].self) { categories in
             onSuccess(categories)
-        } onError: { _ in
-            //ToDO: Handle error
+        } onError: { error in
+            onError(error)
         }
     }
     
     func getMenuList(for categoryId: Int,
-                     onSuccess: @escaping ([String]) -> Void,
+                     onSuccess: @escaping (CategoryDetails) -> Void,
                      onError: @escaping (Error) -> Void) {
-        //ToDo - Create Model for Category Details and return
+        
+        NetworkManager.instance.performOperation(request: MenuCategoryDetailsRequest(),
+                                                 reponseType: CategoryDetails.self) { categories in
+            onSuccess(categories)
+        } onError: { error in
+            onError(error)
+        }
     }
 }

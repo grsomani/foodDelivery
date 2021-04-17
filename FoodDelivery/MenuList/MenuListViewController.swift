@@ -9,7 +9,7 @@ import UIKit
 
 protocol MenuListViewDelegate {
     func updateCategories(with categories: [MenuCategory])
-    func updateItemsList(with categoryDetails: [String])
+    func updateItemsList(with categoryDetails: CategoryDetails)
 }
 
 class MenuListViewController: UIViewController {
@@ -53,8 +53,8 @@ extension MenuListViewController: MenuListViewDelegate {
         self.presenter?.fetchMenu(for: firstCategory.categoryId)
     }
     
-    func updateItemsList(with categoryDetails: [String]) {
-        
+    func updateItemsList(with categoryDetails: CategoryDetails) {
+        print(categoryDetails)
     }
     
 }
