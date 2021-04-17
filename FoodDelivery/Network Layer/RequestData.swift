@@ -14,22 +14,23 @@ public enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
-public struct RequestData {
-    public let path: String
-    public let method: HTTPMethod
-    public let params: [String: Any?]?
-    public let headers: [String: String]?
-    
-    public init (
-        path: String,
-        method: HTTPMethod = .get,
-        params: [String: Any?]? = nil,
-        headers: [String: String]? = nil
-    ) {
-        self.path = path
-        self.method = method
-        self.params = params
-        self.headers = headers
-    }
+public protocol RequestData {
+    var path: String { get }
+    var method: HTTPMethod { get }
+    var params: [String: Any?]? { get }
+    var headers: [String: String]? { get }
 }
 
+extension RequestData {
+    var method: HTTPMethod {
+        return .get
+    }
+    
+    var params: [String: Any?]? {
+        return nil
+    }
+    
+    var headers: [String: String]? {
+        return nil
+    }
+}
